@@ -72,14 +72,23 @@ public class Exercicios implements JFrameBaseInterface{
     @Override
     public void instanciarComponentes() {
         jButtonEx01 = new JButton("Ex. 01");
+        jButtonEx01.setToolTipText("Ir para o exercício 01");
         jButtonEx02 = new JButton("Ex. 02");
+        jButtonEx02.setToolTipText("Ir para o exercício 02");
         jButtonEx03 = new JButton("Ex. 03");
+        jButtonEx03.setToolTipText("Ir para o exercício 03");
         jButtonEx04 = new JButton("Ex. 04");
+        jButtonEx04.setToolTipText("Ir para o exercício 04");
         jButtonEx05 = new JButton("Ex. 05");
+        jButtonEx05.setToolTipText("Ir para o exercício 05");
         jButtonEx06 = new JButton("Ex. 06");
+        jButtonEx06.setToolTipText("Ir para o exercício 06");
         jButtonEx07 = new JButton("Ex. 07");
+        jButtonEx07.setToolTipText("Ir para o exercício 07");
         jButtonEx08 = new JButton("Ex. 08");
+        jButtonEx08.setToolTipText("Ir para o exercício 08");
         jButtonEx09 = new JButton("Ex. 09");
+        jButtonEx09.setToolTipText("Ir para o exercício 09");
 
     }
 
