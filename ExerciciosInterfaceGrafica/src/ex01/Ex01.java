@@ -28,7 +28,7 @@ public class Ex01 implements JFrameBaseInterface {
     @Override
     public void gerarTela() {
         jFrame = new JFrame();
-        jFrame.setSize(500, 500);
+        jFrame.setSize(375, 240);
         jFrame.setLayout(null);
         jFrame.setLocationRelativeTo(null);
         jFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -66,8 +66,8 @@ public class Ex01 implements JFrameBaseInterface {
     public void gerarDimencoes() {
         jLabelNome.setSize(70, 20);
         jLabelSobrenome.setSize(70, 20);
-        jTextFieldNome.setSize(150, 20);
-        jTextFieldSobrenome.setSize(180, 20);
+        jTextFieldNome.setSize(150, 30);
+        jTextFieldSobrenome.setSize(180, 30);
         jButtonConcatenar.setSize(150, 80);
     }
 

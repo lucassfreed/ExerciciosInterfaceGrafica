@@ -3,11 +3,16 @@ import ex01.Ex01;
 import ex01.JFrameBaseInterface;
 import ex02.Ex02;
 import ex03.Ex03;
+import ex04.Ex04;
+import ex05.Ex05;
+import ex06.Ex06;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 
 
 public class Exercicios implements JFrameBaseInterface{
@@ -25,6 +30,7 @@ public class Exercicios implements JFrameBaseInterface{
     
     public Exercicios() {
         instanciarComponentes();
+        ConfigurandoLookAndFeel();
         gerarTela();
         gerarDimencoes();
         gerarLocalizacoes();
@@ -134,6 +140,7 @@ public class Exercicios implements JFrameBaseInterface{
         jButtonEx04.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                new Ex04();
             }
         });
     }
@@ -142,6 +149,7 @@ public class Exercicios implements JFrameBaseInterface{
         jButtonEx05.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                new Ex05();
             }
         });
     }
@@ -150,6 +158,7 @@ public class Exercicios implements JFrameBaseInterface{
         jButtonEx06.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                new Ex06();
             }
         });
     }
@@ -176,6 +185,25 @@ public class Exercicios implements JFrameBaseInterface{
             public void actionPerformed(ActionEvent e) {
             }
         });
+    }
+    
+    public void ConfigurandoLookAndFeel() {
+        try {
+            for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (UnsupportedLookAndFeelException e) {
+
+        } catch (ClassNotFoundException e) {
+
+        } catch (InstantiationException e) {
+            
+        } catch (IllegalAccessException e) {
+            
+        }
     }
     
 }

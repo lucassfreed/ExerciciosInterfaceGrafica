@@ -29,7 +29,7 @@ public class Ex02 implements JFrameBaseInterface {
     @Override
     public void gerarTela() {
         jFrame = new JFrame();
-        jFrame.setSize(500, 500);
+        jFrame.setSize(250, 120);
         jFrame.setLayout(null);
         jFrame.setLocationRelativeTo(null);
         jFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -59,8 +59,8 @@ public class Ex02 implements JFrameBaseInterface {
     @Override
     public void gerarDimencoes() {
         jLabelNumero.setSize(80, 20);
-        jTextFieldNumero.setSize(70, 20);
-        jButtonTabuada.setSize(100, 40);
+        jTextFieldNumero.setSize(70, 30);
+        jButtonTabuada.setSize(100, 45);
     }
 
     private void acaoBotaoTabuada() {
