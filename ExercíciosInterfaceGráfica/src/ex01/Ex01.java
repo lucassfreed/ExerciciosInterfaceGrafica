@@ -1,5 +1,6 @@
 package ex01;
 
+import interfaces.JFrameBaseInterface;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -27,7 +28,7 @@ public class Ex01 implements JFrameBaseInterface {
 
     @Override
     public void gerarTela() {
-        jFrame = new JFrame();
+        jFrame = new JFrame("Exerício 01");
         jFrame.setSize(375, 240);
         jFrame.setLayout(null);
         jFrame.setLocationRelativeTo(null);

@@ -1,4 +1,4 @@
-package ex01;
+package interfaces;
 
 
 public interface JFrameBaseInterface {

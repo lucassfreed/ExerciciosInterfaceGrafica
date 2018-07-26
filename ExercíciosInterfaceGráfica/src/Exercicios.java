@@ -1,11 +1,14 @@
 
 import ex01.Ex01;
-import ex01.JFrameBaseInterface;
+import interfaces.JFrameBaseInterface;
 import ex02.Ex02;
 import ex03.Ex03;
 import ex04.Ex04;
 import ex05.Ex05;
 import ex06.Ex06;
+import ex07.Ex07;
+import ex08.Ex08;
+import ex09.Ex09;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -176,6 +179,7 @@ public class Exercicios implements JFrameBaseInterface{
         jButtonEx07.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                new Ex07();
             }
         });
     }
@@ -184,6 +188,7 @@ public class Exercicios implements JFrameBaseInterface{
         jButtonEx08.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                new Ex08();
             }
         });
     }
@@ -192,6 +197,7 @@ public class Exercicios implements JFrameBaseInterface{
         jButtonEx09.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                new Ex09();
             }
         });
     }

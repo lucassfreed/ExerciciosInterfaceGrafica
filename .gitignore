@@ -3,3 +3,5 @@
 *.xml
 *.mf
 /ExerciciosInterfaceGrafica/build/
+/ExercíciosInterfaceGráfica/nbproject/private/
+/ExercíciosInterfaceGráfica/build/

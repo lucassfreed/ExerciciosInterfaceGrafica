@@ -1,74 +1,79 @@
-package ex02;
 
-import ex01.JFrameBaseInterface;
+package ex04;
+
+import interfaces.JFrameBaseInterface;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-public class Ex02 implements JFrameBaseInterface {
-
+public class Ex04 implements JFrameBaseInterface {
+    
     private JFrame jFrame;
     private JLabel jLabelNumero;
     private JTextField jTextFieldNumero;
-    private JButton jButtonTabuada;
-
-    public Ex02() {
+    private JButton jButtonVerificar;
+    
+    public Ex04() {
         instanciarComponentes();
         gerarTela();
         gerarDimencoes();
         gerarLocalizacoes();
         adicionarComponentes();
-        acaoBotaoTabuada();
+        acaoBotaoVericar();
         jFrame.setVisible(true);
     }
 
     @Override
     public void gerarTela() {
-        jFrame = new JFrame();
-        jFrame.setSize(250, 120);
+        jFrame = new JFrame("Exerício 04");
+        jFrame.setSize(190, 120);
         jFrame.setLayout(null);
         jFrame.setLocationRelativeTo(null);
         jFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        
     }
 
     @Override
     public void adicionarComponentes() {
+        jFrame.add(jButtonVerificar);
         jFrame.add(jLabelNumero);
         jFrame.add(jTextFieldNumero);
-        jFrame.add(jButtonTabuada);
     }
 
     @Override
     public void instanciarComponentes() {
+        jButtonVerificar = new JButton();
         jLabelNumero = new JLabel("Número");
         jTextFieldNumero = new JTextField();
-        jButtonTabuada = new JButton("Tabuada");
+        jButtonVerificar.setIcon(new ImageIcon(getClass().getResource
+        ("/Icons/list.png")));
     }
 
     @Override
     public void gerarLocalizacoes() {
         jLabelNumero.setLocation(10, 10);
         jTextFieldNumero.setLocation(10, 30);
-        jButtonTabuada.setLocation(90, 15);
+        jButtonVerificar.setLocation(100, 15);
     }
 
     @Override
     public void gerarDimencoes() {
         jLabelNumero.setSize(80, 20);
-        jTextFieldNumero.setSize(70, 30);
-        jButtonTabuada.setSize(100, 45);
+        jTextFieldNumero.setSize(80, 30);
+        jButtonVerificar.setSize(59, 59);
     }
-
-    private void acaoBotaoTabuada() {
-        jButtonTabuada.addActionListener(new ActionListener() {
+    
+    public void acaoBotaoVericar() {
+        jButtonVerificar.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (jTextFieldNumero.getText().isEmpty()) {
+                 if (jTextFieldNumero.getText().isEmpty()) {
                     JOptionPane.showMessageDialog(null, "Você deve informar algum número.");
                     return;
                 }
@@ -78,15 +83,30 @@ public class Ex02 implements JFrameBaseInterface {
                 } catch (NumberFormatException ex) {
                     JOptionPane.showMessageDialog(null, "Você deve informar apenas números!");
                     return;
+                }         
+                
+                String texto = numero + " é um número ";
+                
+                if ((numero % 2) == 0) {
+                    texto += "par";
+                } else {
+                    texto += "ímpar";
                 }
-                String texto = "";
-                for (int i = 1; i <= 10; i++) {
-                    texto += numero + " x " + i + " = " + (numero * i)+ "\n";
+                
+                texto += " e ";
+                
+                if (numero < 0) {
+                    texto += "negativo";
+                } else if (numero > 0) {
+                    texto += "positivo";
+                } else {
+                    texto += "neutro";
                 }
-                JOptionPane.showMessageDialog(null, "Tabuada:\n" + texto);
-
+                
+                JOptionPane.showMessageDialog(null, texto);
             }
         });
     }
-
+    
+    
 }
