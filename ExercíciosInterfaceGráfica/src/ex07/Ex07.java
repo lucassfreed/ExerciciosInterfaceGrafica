@@ -9,6 +9,7 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
@@ -157,7 +158,10 @@ public class Ex07 implements JFrameBaseInterface {
         jLabelAuxilioSaude.setLocation(20, 490);
         jTextFieldAuxilioSaude.setLocation(20, 545);
         
-        jLabelResultado.setLocation(20, 490);
+        jLabelResultado.setLocation(350, 0);
+        jTextAreaResultado.setLocation(350, 55);
+        
+        jButtonProcessar.setLocation(350, 500);
         
     }
 
@@ -188,6 +192,9 @@ public class Ex07 implements JFrameBaseInterface {
         jTextFieldAuxilioSaude.setSize(140, 30);
         
         jLabelResultado.setSize(300, 80);
+        jTextAreaResultado.setSize(250, 400);
+        
+        jButtonProcessar.setSize(140, 50);
         
     }
     
@@ -197,9 +204,65 @@ public class Ex07 implements JFrameBaseInterface {
             @Override
             public void actionPerformed(ActionEvent e) {
                 
+                if (!verificarCampos()) {
+                    return;
+                }
+                
+                String nome = jTextFieldNome.getText();
+                int quantidadeHoras = Integer.parseInt(jTextFieldQuantidadeHoras.getText());
+                double valorINSS = Double.parseDouble(jTextFieldValorINSS.getText());
                 
                 
             }
         });
+    }
+    
+    private boolean verificarCampos() {
+        if (jTextFieldNome.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "O nome não foi informado!");
+            jTextFieldNome.requestFocus();
+            return false;
+        }
+        if (jTextFieldQuantidadeHoras.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "A quantidade de horas não foi informada!");
+            jTextFieldQuantidadeHoras.requestFocus();
+            return false;
+        }
+        if (jTextFieldValorINSS.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "O valor do INSS não foi informado!");
+            jTextFieldValorINSS.requestFocus();
+            return false;
+        }
+        if (jTextFieldContribuicaoSindical.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "A contribuição sindical não foi informada!");
+            jTextFieldContribuicaoSindical.requestFocus();
+            return false;
+        }
+        if (jTextFieldValorPasse.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "O valor do passe não foi informado!");
+            jTextFieldValorPasse.requestFocus();
+            return false;
+        }
+        if (jTextFieldAuxilioAlmoco.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "O auxílio almoço não foi informado!");
+            jTextFieldAuxilioAlmoco.requestFocus();
+            return false;
+        }
+        if (jTextFieldAuxilioEducacao.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "O auxílio educação não foi informado!");
+            jTextFieldAuxilioEducacao.requestFocus();
+            return false;
+        }
+        if (jTextFieldAuxilioSaude.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "O auxílio saúde não foi informado!");
+            jTextFieldAuxilioSaude.requestFocus();
+            return false;
+        }
+        if (jComboBoxCargo.getSelectedItem().equals(null)) {
+            JOptionPane.showMessageDialog(null, "O cargo não foi informado!");
+            jComboBoxCargo.requestFocus();
+            return false;
+        }
+        return true;
     }
 }
